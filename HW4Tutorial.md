@@ -14,7 +14,7 @@ When using jupyter notebooks, you can launch them from the command line. Lauchin
 This problem involves performing statistical tests on the datasets given, comparing the two columns of each dataset as the two groups for each statistical test.
 In order to begin, accessing the information in the files can be done in several ways, but one common method is using PANDAS:
 
-'''python
+```python
 import pandas as pd
 dataset1 = pd.read_csv("Q3/dataset1.txt", sep='\t', header=None)
-'''
+```
