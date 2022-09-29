@@ -18,3 +18,11 @@ In order to begin, accessing the information in the files can be done in several
 import pandas as pd
 dataset1 = pd.read_csv("Q3/dataset1.txt", sep='\t', header=None)
 ```
+This will put the data into a pandas dataframe object, which can be accesssed as follows:
+
+```python
+dataset1.iloc[:,0] #this will give the 0th column of the dataframe
+dataset1.iloc[0] #this will give the 0th row of the dataframe
+```
+Use these functions and others to explore the data as you complete this problem. I encourage you to look at the documentation for pandas, specifically pd.read_csv to see what each argument is signifying in this specific example. The .iloc function allows access to the dataframe for slicing the data into columns for the purpose of the statstical testing here.
+
