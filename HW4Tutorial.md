@@ -42,3 +42,5 @@ Look up these functions in order to read the documentation of how to call them, 
 scipy.stats.wilcoxon(dataset1.iloc[:,0], dataset1.iloc[:,1])
 ```
 The remember from above that dataset1.iloc[:,0] will give a slice of the 0th column to input into the function, this will be usefull in each of these statistical test funcitons. The other functions may have slightly different parameters, so be sure to look at them in order to determine exactly how they are used. 
+
+The final element of question 3 involves plotting the data
