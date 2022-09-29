@@ -26,3 +26,19 @@ dataset1.iloc[0] #this will give the 0th row of the dataframe
 ```
 Use these functions and others to explore the data as you complete this problem. I encourage you to look at the documentation for pandas, specifically pd.read_csv to see what each argument is signifying in this specific example. The .iloc function allows access to the dataframe for slicing the data into columns for the purpose of the statstical testing here.
 
+Now we can import the functions for statistical tests and use them:
+```python
+import scipy
+
+scipy.stats.wilcoxon
+scipy.stats.ttest_1samp
+scipy.stats.rank_sum
+scipy.stats.ttest_ind
+```
+Each of these tests will correspond to what is being asked of you in parts A and B of questions 3, so read the questions carefully in order to determine which to use.
+Look up these functions in order to read the documentation of how to call them, but an example may resemble:
+
+```python
+scipy.stats.wilcoxon(dataset1.iloc[:,0], dataset1.iloc[:,1])
+```
+The remember from above that dataset1.iloc[:,0] will give a slice of the 0th column to input into the function, this will be usefull in each of these statistical test funcitons. The other functions may have slightly different parameters, so be sure to look at them in order to determine exactly how they are used. 
