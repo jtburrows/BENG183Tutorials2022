@@ -4,6 +4,8 @@ Special thanks to Jingtian Zhou who wrote the original version of this homework.
 ## Preparation
 To complete this homework, using Python, R, or Matlab is viable in analysis of the provided datasets, so feel free to use any of these. However, this tutorial will focus on using python to address the questions, specifically using Jupyter Notebooks for coding. 
 
+Python is a coding language useful for analysis of data and for graphing due to the ease of reading and coding in python, as well as the numerous useful packages implemmented in python for analysis and graphing.
+
 Below are links which can be used in order to install python and jupyter notebooks if you have not already used them:
 https://wiki.python.org/moin/BeginnersGuide/Download
 
