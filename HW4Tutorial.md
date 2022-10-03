@@ -73,3 +73,13 @@ ax.plot() #can plot a line on an chart
 ```
 
 You can experiment with these and look them up in order to make you charts for this assignment and future use more visually appealing and informative.
+
+Finally, you can use plots other than scatterplot to visualize the data. Here is an example of how to make a histogram or violin plot (again using random data).
+
+```python
+fig, axes = plt.subplots(1,2,figsize=(8,4))
+hist = axes[0].hist(data1, bins=10,alpha=.4, histtype="stepfilled")
+axes[1].violinplot(data1)
+```
+
+<img src="Images/OtherPlots.png" title="Histogram and Violin Plots">
