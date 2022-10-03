@@ -59,4 +59,4 @@ ax.scatter(data1[:,0], data1[:,1])
 ```
 
 
-<img src="Images/Scatterplot.png">
+<img src="Images/Scatterplot.png" title="Sample scatterplot">
