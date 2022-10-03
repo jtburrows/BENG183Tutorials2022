@@ -80,8 +80,12 @@ You can experiment with these and look them up in order to make you charts for t
 Finally, you can use plots other than scatterplot to visualize the data. Here is an example of how to make a histogram or violin plot (again using random data).
 
 ```python
-fig, axes = plt.subplots(1,2,figsize=(8,4))
+fig, axes = plt.subplots(1,2,figsize=(8,4)) #making 2 subplots in the figure (one row, 2 columns)
+
+#first plot is in axes[0], we are plotting data1, which has 2 columns, resulting in 2 histograms
 hist = axes[0].hist(data1, bins=10,alpha=.4, histtype="stepfilled")
+
+#second plot on axes[1] is a violin plot which represents the data on a spectrum with probability density represented
 axes[1].violinplot(data1)
 ```
 
