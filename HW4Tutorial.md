@@ -36,11 +36,13 @@ scipy.stats.rank_sum
 scipy.stats.ttest_ind
 ```
 Each of these tests will correspond to what is being asked of you in parts A and B of questions 3, so read the questions carefully in order to determine which to use.
-Look up these functions in order to read the documentation of how to call them, but an example may resemble:
+Look up these functions in order to read the documentation of how to call them and what values they return, but an example may resemble:
 
 ```python
 scipy.stats.wilcoxon(dataset1.iloc[:,0], dataset1.iloc[:,1])
 ```
 The remember from above that dataset1.iloc[:,0] will give a slice of the 0th column to input into the function, this will be usefull in each of these statistical test funcitons. The other functions may have slightly different parameters, so be sure to look at them in order to determine exactly how they are used. 
 
-The final element of question 3 involves plotting the data
+The final element of question 3 involves plotting the data. Using matplotlib in python is the most effective way to plot the data in order to visualizes the data. There are many tutorial online giving examples, but here is an example of what plotting may look like:
+
+
