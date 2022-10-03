@@ -60,3 +60,16 @@ ax.scatter(data1[:,0], data1[:,1])
 
 
 <img src="Images/Scatterplot.png" title="Sample scatterplot">
+
+This image represents the scattered data from the randomly generated being used as an example. If you were to run this exact example on your end you would get different random points on the scatterplot due to the data generation.
+
+When comparing the levels of expression in the datasets for this problem, you may want to add axis titles, a chart title, or a line to the plot to represent equal expression. Some useful functions for this are listed below:
+
+```python
+ax.set_xlabel() #sets xaxis title
+ax.set_ylabel() #sets yaxis title
+ax.set_title() #sets chart title  
+ax.plot() #can plot a line on an chart
+```
+
+You can experiment with these and look them up in order to make you charts for this assignment and future use more visually appealing and informative.
