@@ -45,4 +45,15 @@ The remember from above that dataset1.iloc[:,0] will give a slice of the 0th col
 
 The final element of question 3 involves plotting the data. Using matplotlib in python is the most effective way to plot the data in order to visualizes the data. There are many tutorial online giving examples, but here is an example of what plotting may look like:
 
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy
 
+data1 = 10*np.random.random_sample((10,2)) #generated random data for this example
+
+result = scipy.stats.wilcoxon(data1[:,0], data1[:,1])
+
+fig, ax = plt.subplots(1,1,figsize=(4,4))
+ax.scatter(data1[:,0], data1[:,1])
+```
