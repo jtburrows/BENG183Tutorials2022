@@ -55,10 +55,11 @@ import scipy
 
 data1 = 10*np.random.random_sample((10,2)) #generated random data for this example
 
-result = scipy.stats.wilcoxon(data1[:,0], data1[:,1])
+result = scipy.stats.wilcoxon(data1[:,0], data1[:,1]) #running the wilcoxon test, saving to results variable
 
+#making a figure with 1 subplot, there are varioius ways to make a single plot, this is just one
 fig, ax = plt.subplots(1,1,figsize=(4,4))
-ax.scatter(data1[:,0], data1[:,1])
+ax.scatter(data1[:,0], data1[:,1]) #making a scatterplot with the first column as x and the second as y
 ```
 
 
