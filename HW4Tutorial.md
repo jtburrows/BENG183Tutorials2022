@@ -57,3 +57,6 @@ result = scipy.stats.wilcoxon(data1[:,0], data1[:,1])
 fig, ax = plt.subplots(1,1,figsize=(4,4))
 ax.scatter(data1[:,0], data1[:,1])
 ```
+
+
+<img src="Images/Scatterplot.png">
