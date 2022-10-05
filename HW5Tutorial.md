@@ -50,3 +50,4 @@ axes[1].set_title("Kmeans")
 ```
 <img scr="Images/HW5ScatterplotsScreenshot.png" width=40% height=40%>
 
+Above we can see the resulting plot from our analysis, in this case displaying first the single linkage plot and then the kmeans plot for clustering.
