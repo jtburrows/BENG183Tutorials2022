@@ -19,4 +19,4 @@ Hierarchical clustering involves calcuating the similarity between a profile (a 
 There are several methods for calculating this similarity in hierarchical clustering: arithmetic mean (UPGAM), complete linkage, and single linkage.
 
 <img src="Images/LinkagetypesScreenshot.png">
-
+**Image courtesy of https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rclustering/rclustering/
