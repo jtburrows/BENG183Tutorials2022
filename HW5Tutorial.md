@@ -52,3 +52,7 @@ axes[1].set_title("Kmeans")
 
 Above we can see the resulting plot from our analysis, in this case displaying first the single linkage plot and then the kmeans plot for clustering.
 The functions for heirarchical clustering and kmeans clustering used above can be searched in the python documentation in order to determine which parameters are needed to plot the data correctly, and using all 4 of the methods necessary for the assignment (hint, change the method used on the hierarchical clustering). Additionally, ensure you are using 2 clusters for your assignemnt and not more, look at the parameters for the function in order to determine how to accomplish this.
+
+
+## Question 3
+
