@@ -28,3 +28,25 @@ Image courtesy of https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rcluster
 
 From here we can begin to implement these clustering algorithms. For this assignment our data will consist of 2 columns of x and y coordinates which will be used to calculate the distance as described in the above methodolgies. For this tutorial random data will be used to illustrate whcih functions to call and how:
 
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from scipy.cluster.hierarchy import fcluster, linkage
+
+data1 = 10*np.random.random_sample((30,2)) #Random sample of data for this example only
+
+fig, axes = plt.subplots(1,2,figsize=(16,4)) #making a plot with 2 subplots
+
+#linkage function and fccluster are scipy.cluster.hierarchy functions
+links = linkage(data1, method="single")
+axes[0].scatter(data1[:,0], data1[:,1], c=fcluster(links,t=3,criterion="maxclust"))
+axes[0].set_title("Single")
+
+# kmeans is a scipy.cluster function
+kmeans = KMeans(n_clusters=3,n_init=100,random_state=0).fit(data1)
+axes[1].scatter(data1[:,0], data1[:,1], c=kmeans.predict(data1))
+axes[1].set_title("Kmeans")
+```
+<img scr="Images/HW5ScatterplotsScreenshot.png" width=40% height=40%>
+
