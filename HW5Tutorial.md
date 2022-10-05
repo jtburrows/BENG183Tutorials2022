@@ -40,14 +40,15 @@ fig, axes = plt.subplots(1,2,figsize=(16,4)) #making a plot with 2 subplots
 
 #linkage function and fccluster are scipy.cluster.hierarchy functions
 links = linkage(data1, method="single")
-axes[0].scatter(data1[:,0], data1[:,1], c=fcluster(links,t=3,criterion="maxclust"))
+axes[0].scatter(data1[:,0], data1[:,1], c=fcluster(links,t=3,criterion="maxclust")) #plotting the scatterplot and coloring the points with the cluster data
 axes[0].set_title("Single")
 
 # kmeans is a scipy.cluster function
 kmeans = KMeans(n_clusters=3,n_init=100,random_state=0).fit(data1)
-axes[1].scatter(data1[:,0], data1[:,1], c=kmeans.predict(data1))
+axes[1].scatter(data1[:,0], data1[:,1], c=kmeans.predict(data1)) #plotting the scatterplot and coloring the points with the cluster data
 axes[1].set_title("Kmeans")
 ```
 <img src="Images/HW5ScatterplotsScreenshot.png">
 
 Above we can see the resulting plot from our analysis, in this case displaying first the single linkage plot and then the kmeans plot for clustering.
+The functions for heirarchical clustering and kmeans clustering used above can be searched in the python documentation in order to determine which parameters are needed to plot the data correctly, and using all 4 of the methods necessary for the assignment (hint, change the method used on the hierarchical clustering). Additionally, ensure you are using 2 clusters for your assignemnt and not more, look at the parameters for the function in order to determine how to accomplish this.
