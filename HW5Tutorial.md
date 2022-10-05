@@ -48,6 +48,6 @@ kmeans = KMeans(n_clusters=3,n_init=100,random_state=0).fit(data1)
 axes[1].scatter(data1[:,0], data1[:,1], c=kmeans.predict(data1))
 axes[1].set_title("Kmeans")
 ```
-<img scr="Images/HW5ScatterplotsScreenshot.png" width=40% height=80%>
+<img src="Images/HW5ScatterplotsScreenshot.png" width=40% height=80%>
 
 Above we can see the resulting plot from our analysis, in this case displaying first the single linkage plot and then the kmeans plot for clustering.
