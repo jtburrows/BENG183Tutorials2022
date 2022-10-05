@@ -18,5 +18,5 @@ K-means clustering is an algorithm which begins with a certain number of cluster
 Hierarchical clustering involves calcuating the similarity between a profile (a point or cluster) and all other profiles. From here the two most similar profiles are combined to form a new profile. This new profile has its similarity to others recalculated and this process of combining profiles continues until all of the profiles are combined into one large cluster. This large cluster can be broekn apart into its smaller pieces to reveal a good cluster number for the dataset. 
 There are several methods for calculating this similarity in hierarchical clustering: arithmetic mean (UPGAM), complete linkage, and single linkage.
 
-<img src="Images/LinkagetypesScreenshot.png">
+<img src="Images/LinkagetypesScreenshot.png" width="300" height="300">
 **Image courtesy of https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rclustering/rclustering/
