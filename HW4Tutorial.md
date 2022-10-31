@@ -127,4 +127,17 @@ from scipy.sparse import csr_matrix
 from scipy.stats import poisson
 ```
 
-Some important functions to consider when performing this analysis
+Some important functions to consider when performing this analysis:
+
+You are going to first want to import both edge lists for analysis, the expected (GM12878_combined_10kb_chr21.localexp.txt) and observed values (GM12878_combined_10kb_chr21.obs.txt). Use the pd.read_csv fucntion we used earlier (you may or may not need to alter the parameters of the function). From here you will have the expected and observed matrices as edge lists which you will need to convert to matrices. A function to utilize to do this is 
+
+``python
+M = csr_matrix(((M_edge.iloc[:,2], (M_edge.iloc[:,0]//resolution, M_edge.iloc[:,1]//resolution))))
+```
+
+This function will convert you edge list from an edge list to a sparse matrix. A sparse matrix conserves space on your computer by only storing elements which do not have a 0 value, which many of the bins in our observed values will have. Some things to consider about the above function:
+
+: The M_edge variable is the pandas matrix of our edge list we imported with pd.read_csv. Consider what each column in the file is representing to understand what column to put in each part of the csr_matrix function.
+
+: We are dividing by the resolution in the dimensions of the matrix. The resolution is the size of the bins we are studying for our Hi-C interaction in order to see their relation in 3d geneome structure. The resolution is mentioned in the question, but you may want to look at the columns of the observed and expected edge lists to see what the resolution is and why we are dividing by this resolution to create a matrix of the correct size.
+
