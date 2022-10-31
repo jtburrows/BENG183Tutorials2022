@@ -13,6 +13,20 @@ https://jupyter.org/install
 
 When using jupyter notebooks, you can launch them from the command line. Lauching them from the folder in which your datasets are stored (they can also be stored in a sub-folder) is likely easiest for navigation.
 
+Finally, we will be using a number of python packages throughout this assignment and the next. If you have not installed  these packages before, you may need to install them. After installing python, you can install the relevant packages in command line using the command line command:
+
+```
+pip install package_name
+```
+
+An example of this installing pandas specifically:
+
+```
+pip install pandas
+```
+
+You can run these commands for 
+
 ## Question 3
 This problem involves performing statistical tests on the datasets given, comparing the two columns of each dataset as the two groups for each statistical test.
 In order to begin, accessing the information in the files can be done in several ways, but one common method is using PANDAS:
@@ -91,3 +105,26 @@ axes[1].violinplot(data1)
 ```
 
 <img src="Images/OtherPlots.png" title="Histogram and Violin Plots">
+
+
+## Question 6
+
+This question is a bonus question, so I will provide a few functions and concepts which may be useful. 
+
+###6a
+
+This question asks you to determine the null hypothesis regarding each bin. This answer should be roughly 1 sentence in length.
+
+###6b
+
+Some useful packages to import for this problem may include the following:
+
+```python
+import numpy as np
+import scipy
+import pandas as pd
+from scipy.sparse import csr_matrix
+from scipy.stats import poisson
+```
+
+Some important functions to consider when performing this analysis
