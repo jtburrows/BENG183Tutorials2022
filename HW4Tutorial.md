@@ -111,11 +111,11 @@ axes[1].violinplot(data1)
 
 This question is a bonus question, so I will provide a few functions and concepts which may be useful. 
 
-###6a
+### 6a
 
 This question asks you to determine the null hypothesis regarding each bin. This answer should be roughly 1 sentence in length.
 
-###6b
+### 6b
 
 Some useful packages to import for this problem may include the following:
 
