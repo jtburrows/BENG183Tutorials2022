@@ -25,7 +25,7 @@ An example of this installing pandas specifically:
 pip install pandas
 ```
 
-You can run these commands for 
+You can run these commands for the variety of packages you may need to use for this assignment.
 
 ## Question 3
 This problem involves performing statistical tests on the datasets given, comparing the two columns of each dataset as the two groups for each statistical test.
