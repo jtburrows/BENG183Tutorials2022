@@ -113,7 +113,7 @@ This question is a bonus question, so I will provide a few functions and concept
 
 ### 6a
 
-This question asks you to determine the null hypothesis regarding each bin. This answer should be roughly 1 sentence in length.
+This question asks you to determine the null hypothesis regarding each bin. This answer should be roughly 1 sentence in length or less if you use an expression to explain the relationship.
 
 ### 6b
 
