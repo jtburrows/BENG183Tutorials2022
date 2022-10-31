@@ -131,7 +131,7 @@ Some important functions to consider when performing this analysis:
 
 You are going to first want to import both edge lists for analysis, the expected (GM12878_combined_10kb_chr21.localexp.txt) and observed values (GM12878_combined_10kb_chr21.obs.txt). Use the pd.read_csv fucntion we used earlier (you may or may not need to alter the parameters of the function). From here you will have the expected and observed matrices as edge lists which you will need to convert to matrices. A function to utilize to do this is 
 
-``python
+```python
 M = csr_matrix(((M_edge.iloc[:,2], (M_edge.iloc[:,0]//resolution, M_edge.iloc[:,1]//resolution))))
 ```
 
