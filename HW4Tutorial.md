@@ -159,7 +159,9 @@ E.shape[1]
 
 To access the size of your matrix. This will give you the first dimension of size, but the matrix is square so either dimension is acceptable. 
 
-The constraints of the problem involved calculating the p-value at points which were Mij/Eij>1.5 and Eij>0 and 10<j-i<1000. For iterating over the matrix, you will want to consider how the index of the outer for loop (i) relates to the size of the matrix and the inner for loop (j) relates to the 10<j-i<1000.
+The constraints of the problem involved calculating the p-value at points which were Mij/Eij>1.5 and Eij>0 and 10<j-i<1000. For iterating over the matrix, you will want to consider how the index of the outer for loop (i) relates to the size of the matrix and the inner for loop (j) relates to the 10<j-i<1000. 
+
+Note: when using these indeces to access your matrices, you don't want i or j to be bigger than the size of the matrix or you will get an error, be sure to check before accessing your matrices for values that your values will not go out of bounds.
 
 After you have determined the bounds for the iteration through the array, you will want to check the conditions Mij/Eij>1.5 and Eij>0. You can use if statements to check for these (look them up for python if you are unfamiliar). If both are fulfilled, you can calculate the pvalue using the survival function for the poisson distrubution, which you can look up from the import of "scipy.stats poisson" we imported earlier.
 
@@ -171,11 +173,11 @@ For those of you completely new to python and/or programming in general, here is
 
 ```python
 #the right boundary of the range function is exclusive, meaning it goes to this but doesn't include it
-for i in range(1,5):
-    for j in range(1+i, 10-i): 
+for i in range(1,5): #goes through all i from 1 to 5, not counting 5
+    for j in range(1+i, 10-i): # for each i above, goes through all j from 1+i until but not including 10-i
         print(i,j)
-        if j == 8:
+        if j == 8: # if j is >= 8, it says so
             print("maximal value of j")
-        if i * j >= 15:
+        if i * j >= 15: # if i times j is >= to 15, it says so
             print("i*j  is greater than 15")
 ```
