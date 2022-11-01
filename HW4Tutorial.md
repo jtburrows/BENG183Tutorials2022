@@ -137,7 +137,45 @@ M = csr_matrix(((M_edge.iloc[:,2], (M_edge.iloc[:,0]//resolution, M_edge.iloc[:,
 
 This function will convert you edge list from an edge list to a sparse matrix. A sparse matrix conserves space on your computer by only storing elements which do not have a 0 value, which many of the bins in our observed values will have. Some things to consider about the above function:
 
-: The M_edge variable is the pandas matrix of our edge list we imported with pd.read_csv. Consider what each column in the file is representing to understand what column to put in each part of the csr_matrix function.
+ 1. The M_edge variable is the pandas matrix of our edge list we imported with pd.read_csv. Consider what each column in the file is representing to understand what column to put in each part of the csr_matrix function.
 
-: We are dividing by the resolution in the dimensions of the matrix. The resolution is the size of the bins we are studying for our Hi-C interaction in order to see their relation in 3d geneome structure. The resolution is mentioned in the question, but you may want to look at the columns of the observed and expected edge lists to see what the resolution is and why we are dividing by this resolution to create a matrix of the correct size.
+2. We are dividing by the resolution in the dimensions of the matrix. The resolution is the size of the bins we are studying for our Hi-C interaction in order to see their relation in 3d geneome structure. The resolution is mentioned in the question, but you may want to look at the columns of the observed and expected edge lists to see what the resolution is and why we are dividing by this resolution to create a matrix of the correct size.
 
+
+After converting both of your edge lists to matrices, you will be able to actually perform the analysis. There are multiple ways to do this, but here are some suggestions as to how to do this.
+
+Fistly, you may want to use nested for loops to traverse through the matrices (i.e. the i and j dimensions of Mij and Eij). Here is an example of what a for loop looks like in python:
+
+```python
+for i in range(1,1000):
+    for j in range(1,1000):
+```
+
+This for loop will count i from 1 to 1000 and for each i it will count j from 1 to 1000. For your analysis, the limits of your counting will be based on the size of the matrices and the constraints provided in the homework. You can use
+
+```python
+E.shape[1]
+```
+
+To access the size of your matrix. This will give you the first dimension of size, but the matrix is square so either dimension is acceptable. 
+
+The constraints of the problem involved calculating the p-value at points which were Mij/Eij>1.5 and Eij>0 and 10<j-i<1000. For iterating over the matrix, you will want to consider how the index of the outer for loop (i) relates to the size of the matrix and the inner for loop (j) relates to the 10<j-i<1000.
+
+After you have determined the bounds for the iteration through the array, you will want to check the conditions Mij/Eij>1.5 and Eij>0. You can use if statements to check for these (look them up for python if you are unfamiliar). If both are fulfilled, you can calculate the pvalue using the survival function for the poisson distrubution, which you can look up from the import of "scipy.stats poisson" we imported earlier.
+
+You will want to store the total loops (p-value < 1e-10), as well as the smallest pvalue and the coordinates of the smallest pvalue in the plot. You can update this using if statements checking to see if a new value is lower than the previous low. Finally, for those new to programming, be sure to create these variables outside of the for loops, as otherwise they will not be stored afterwards.
+
+
+## Basic example of for loops and if statements in python
+For those of you completely new to python and/or programming in general, here is a basic example of how for loops and if statements work in python as well as their format. You can run this in your own notebook to get an idea of how they work.
+
+```python
+#the right boundary of the range function is exclusive, meaning it goes to this but doesn't include it
+for i in range(1,5):
+    for j in range(1+i, 10-i): 
+        print(i,j)
+        if j == 8:
+            print("maximal value of j")
+        if i * j >=15
+            print("greater than 15")
+```
