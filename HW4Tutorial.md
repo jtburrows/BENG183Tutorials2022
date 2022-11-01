@@ -176,6 +176,6 @@ for i in range(1,5):
         print(i,j)
         if j == 8:
             print("maximal value of j")
-        if i * j >=15
-            print("greater than 15")
+        if i * j >= 15:
+            print("i*j  is greater than 15")
 ```
