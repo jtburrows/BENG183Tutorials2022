@@ -48,7 +48,7 @@ Now we can import the functions for statistical tests and use them:
 import scipy
 
 scipy.stats.wilcoxon
-scipy.stats.ttest_1samp
+scipy.stats.ttest_rel
 scipy.stats.rank_sum
 scipy.stats.ttest_ind
 ```
