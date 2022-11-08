@@ -49,7 +49,7 @@ import scipy
 
 scipy.stats.wilcoxon
 scipy.stats.ttest_rel
-scipy.stats.rank_sum
+scipy.stats.ranksums
 scipy.stats.ttest_ind
 ```
 Each of these tests will correspond to what is being asked of you in parts A and B of questions 3, so read the questions carefully in order to determine which to use.
