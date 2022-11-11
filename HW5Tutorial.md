@@ -88,6 +88,7 @@ data1 = 10*np.random.random_sample((200,200))
 data2 = 8*np.random.random_sample((200,200))
 
 # combine the datasets and then create the labels for dataset 1 as positive and dataset 2 as negative
+# you can reverse the positive and negative labels by switching the ones and zeros associated with each set
 X1 = np.concatenate((data1, data2))
 Y1 = np.concatenate((np.ones(len(data1)), np.zeros(len(data2)))) #data1 as positive(1) and data2 as negative(0)
 ```
