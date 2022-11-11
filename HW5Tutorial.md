@@ -78,4 +78,58 @@ cellA = pd.read_csv("celltypeA.txt",index_col=0, header=0)
 cellB = pd.read_csv("celltypeB.txt", index_col=0, header=0)
 cellC = pd.read_csv("celltypeC.txt", index_col=0, header=0)
 ```
+These files have indeces and column headers, so the two additional arguments are necessary to put them into a dataframe correctly.
 
+From here, an example on random data will be used to show what functions to use and how to use them. You will need to modify and repurpose this code in order to answer the questions:
+
+```python
+# generate random data
+data1 = 10*np.random.random_sample((200,200))
+data2 = 8*np.random.random_sample((200,200))
+
+# combine the datasets and then create the labels for dataset 1 as positive and dataset 2 as negative
+X1 = np.concatenate((data1, data2))
+Y1 = np.concatenate((np.ones(len(data1)), np.zeros(len(data2)))) #data1 as positive(1) and data2 as negative(0)
+```
+
+Here we have created our training data for our logistic regression model, with positive and negative samples. From here, we will divide the data into testing and training sets, and then calculate the accuracy of our model in the following code:
+
+```python
+#store the values or auroc and aupr to make calculation on
+aurocToAverage = []
+auprToAverage = []
+
+# score which will be later used to make calculation for aupr and auroc
+score = np.zeros(len(Y1))
+
+
+#this function will divide out model into training and testing data, 5 splits
+stratifiedKFold = sk.model_selection.StratifiedKFold(n_splits=5, shuffle=True, random_state=0)
+
+# this function will create our logistic regression to train on
+linModel = LogisticRegression(class_weight='balanced', random_state=0, max_iter=1000)
+
+
+#we will split our dataset into the splits here, the split function will break our dataset into
+# the correct sizes and allow us to create 5 different training and test datasets to average over
+for train_index, test_index in stratifiedKFold.split(X1,Y1):
+    testX1 = X1[test_index]
+    trainX1 = X1[train_index]
+    trainY1 = Y1[train_index]
+    testY1 = Y1[test_index]
+    
+    #train the linear model on our training data
+    linModel.fit(trainX1, trainY1)
+    
+    #predict the correct labels for our test dataset
+    predY =  linModel.predict_proba(testX1)[:,1]
+    score[test_index] = predY.copy()
+    
+    # calculate the auroc and aupr and then add them to our lists to average
+    aurocToAverage.append(metrics.roc_auc_score(testY1, predY))
+    auprToAverage.append(metrics.average_precision_score(testY1, predY))
+
+print("For cellA positive and cellB negative samples:")
+print("AUROC:" + str((sum(aurocToAverage)/len(aurocToAverage))))
+print("AUPR:" + str((sum(auprToAverage)/len(auprToAverage))))
+```
