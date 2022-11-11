@@ -56,3 +56,26 @@ The functions for heirarchical clustering and kmeans clustering used above can b
 
 ## Question 3
 
+For the final question, we are going to be calculating the AUROC and the AUPR for a the datasets given:
+
+Useful Packages:
+```python
+import numpy as np
+import pandas as pd
+import scipy as scp
+import sklearn as sk
+from sklearn.linear_model import LogisticRegression
+from sklearn import model_selection as ms
+import matplotlib.pyplot as plt
+from sklearn import metrics
+```
+
+The AUROC is the area under the Receiver operating characteristic curve, which is a measurement of accuracy for our linear model. This relates to the true positive rate against the false positive rate. The AUPR is the area under the precision recall curvee, which is a measurement based on the precision versus the recall of model. More information regarding these metrics can be seen in the lectures, so please reference them for additional context.
+
+To begin, we will read in our datasets:
+```python
+cellA = pd.read_csv("celltypeA.txt",index_col=0, header=0)
+cellB = pd.read_csv("celltypeB.txt", index_col=0, header=0)
+cellC = pd.read_csv("celltypeC.txt", index_col=0, header=0)
+```
+
