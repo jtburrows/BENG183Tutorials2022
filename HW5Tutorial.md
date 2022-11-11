@@ -133,3 +133,21 @@ print("For cellA positive and cellB negative samples:")
 print("AUROC:" + str((sum(aurocToAverage)/len(aurocToAverage))))
 print("AUPR:" + str((sum(auprToAverage)/len(auprToAverage))))
 ```
+
+From here, we will want to plot our ROC and Precision-Recall Curves. We can do this using the scores we saved in the previous step:
+
+```python 
+#calculates the false positive rate and true positive rate from our known values and our predicted scores
+lr_fpr, lr_tpr, _ = sk.metrics.roc_curve(Y1, score) 
+x = np.linspace(0, 10, 1000)
+plt.plot(lr_fpr, lr_tpr, marker='.', label='Logistic')
+plt.plot(range(1))
+```
+
+```python
+#calculates the precision and recall from our known values and predicted scores
+lr_precision, lr_recall, _ = sk.metrics.precision_recall_curve(Y1, score)
+plt.plot(lr_recall, lr_precision, marker='.', label='Logistic')
+plt.plot(range(1))
+```
+You will want to add labels to the axes in order to display what each curve is displaying. By generating these curves for the data given in the problem, you can make determinations about our machine learning model. 
