@@ -150,4 +150,4 @@ lr_precision, lr_recall, _ = sk.metrics.precision_recall_curve(Y1, score)
 plt.plot(lr_recall, lr_precision, marker='.', label='Logistic')
 plt.plot(range(1))
 ```
-You will want to add labels to the axes in order to display what each curve is displaying. By generating these curves for the data given in the problem, you can make determinations about our machine learning model. 
+You will want to add labels to the axes in order to make clear what each curve is displaying for your understanding and the homework assignment. By generating these curves for the data given in the problem, you can make determinations about our machine learning model. For additional information regarding the nature of AUROC and AUPR, as well as machine learnign models used in this homework, please reference the lectures or look at documentation for these models and functions.
